@@ -70,6 +70,14 @@ while True: #run forever
                 shun_com = "shun " + attacker_ip
                 output = ssh_conn.send_command(shun_com)
                 print(output)
+
+                #A object group called "Attacker-IPs" used in control plane ACL to block attackers, uncomment follow 3 linesif needed.
+                # commands = ["object-group network Attacker-IPs",f"network-object host {attacker_ip}"]
+                # ssh_conn.send_config_set(commands)
+                # print(f"\n{attacker_ip} is also added to object group Attacker-IPs"  )
+                
+                print("\nScript is listening for more login failures..."  )
+
                 ssh_conn.disconnect() 
                 attacker_ip_list.clear()
                 start = time.time()
