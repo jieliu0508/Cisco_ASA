@@ -104,14 +104,14 @@ def main():
     Main function to configure and start the syslog server.
     """
     # User-defined parameters
-    # udp_port = int(input("Enter UDP port to listen on: "))*
-    udp_port = 9981
-    # threshold = int(input("Enter the threshold for blocking IPs (e.g., 3): "))
-    threshold =2
-    #asa_host = input("Enter ASA firewall IP address: ")
-    asa_host = "192.168.100.1"
-    # asa_username = input("Enter ASA username: ")
-    asa_username = "jliu"
+    udp_port = int(input("Enter UDP port to listen on: "))*
+    # udp_port = 9981
+    threshold = int(input("Enter the threshold for blocking IPs (e.g., 3): "))
+    #threshold =2
+    asa_host = input("Enter ASA firewall IP address: ")
+    #asa_host = "192.168.100.1"
+    asa_username = input("Enter ASA username: ")
+    # asa_username = "admin"
     #asa_password = input("Enter ASA password: ")
     asa_password = getpass(prompt="Enter ASA password: ")
 
