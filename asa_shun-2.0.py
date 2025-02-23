@@ -45,7 +45,7 @@ def track_ip(ip, threshold, asa_host, asa_username, asa_password):
     now = datetime.now()
     ip_tracker[ip].append(now)
 
-    print(ip_tracker)
+    #print(ip_tracker)
 
     # Remove timestamps older than one hour
     while ip_tracker[ip] and now - ip_tracker[ip][0] > timedelta(hours=1):
