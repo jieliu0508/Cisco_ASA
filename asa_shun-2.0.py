@@ -73,6 +73,8 @@ def block_ip_on_asa(ip, asa_host, asa_username, asa_password):
         output = ssh_conn.send_command(shun_com)
         print(output)
         ssh_conn.disconnect()
+        print(f"\nSyslog server listening on UDP port {udp_port} ...\n")
+        
         
     except Exception as e:
         print(f"Failed to block IP {ip} on ASA firewall: {e}")
@@ -104,8 +106,8 @@ def main():
     Main function to configure and start the syslog server.
     """
     # User-defined parameters
+    global udp_port
     udp_port = int(input("Enter UDP port to listen on: "))
-    # udp_port = 9981
     threshold = int(input("Enter the threshold for blocking IPs (e.g., 3): "))
     #threshold =2
     asa_host = input("Enter ASA firewall IP address: ")
