@@ -31,7 +31,7 @@ def analyze_syslog(log_line, threshold, asa_host, asa_username, asa_password):
     if match:
         message_id = match.group(1)
         user_ip = match.group(2)
-        # local User DB generates ID 113015, rmeote User DB generates 113005
+        # local User auth generates ID 113015, remote user auth generates 113005
         if message_id == "113015" or "113005":
             print(log_line)
             print(f"\nDetected syslog ID {message_id}. User IP: {user_ip}")
