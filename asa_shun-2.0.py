@@ -104,7 +104,7 @@ def main():
     Main function to configure and start the syslog server.
     """
     # User-defined parameters
-    udp_port = int(input("Enter UDP port to listen on: "))*
+    udp_port = int(input("Enter UDP port to listen on: "))
     # udp_port = 9981
     threshold = int(input("Enter the threshold for blocking IPs (e.g., 3): "))
     #threshold =2
